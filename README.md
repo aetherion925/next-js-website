@@ -1,36 +1,175 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Aetherion - Portfolio Website
 
-## Getting Started
+A modern, responsive portfolio website for Aetherion software consulting firm, built with Next.js 15.5, Tailwind CSS v4, and TypeScript.
 
-First, run the development server:
+## 🚀 Features
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+- **Modern Stack**: Next.js 15.5 with App Router, Tailwind CSS v4, TypeScript
+- **Responsive Design**: Mobile-first approach with smooth animations
+- **Performance**: Turbopack for fast development and builds
+- **Contact Form**: Gmail SMTP integration for direct email contact
+- **SEO Optimized**: Proper metadata and semantic HTML structure
+- **Accessibility**: WCAG compliant with proper ARIA labels
+
+## 📁 Project Structure
+
+```
+src/
+├── app/                    # Next.js App Router
+│   ├── api/contact/       # Contact form API endpoint
+│   ├── globals.css        # Global styles and Tailwind CSS
+│   ├── layout.tsx         # Root layout with fonts
+│   └── page.tsx           # Main page with all sections
+├── components/            # React components
+│   ├── Navigation.tsx     # Header navigation
+│   ├── Hero.tsx          # Hero section
+│   ├── About.tsx         # About section with stats
+│   ├── Services.tsx      # Services grid
+│   ├── TechStack.tsx     # Technology showcase
+│   ├── Projects.tsx      # Portfolio projects
+│   ├── Team.tsx          # Team members
+│   ├── Contact.tsx       # Contact form
+│   └── Footer.tsx        # Footer with links
+└── data/                 # Data files
+    ├── projects.ts       # Project data
+    └── team.ts           # Team member data
+
+legacy-design/            # Reference implementation
+public/                   # Static assets
+├── project_images/       # Portfolio screenshots
+├── team_images/          # Team photos
+└── tech_stack/           # Technology logos
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## 🛠️ Getting Started
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+### Prerequisites
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+- Node.js 18+ 
+- npm or yarn
 
-## Learn More
+### Installation
 
-To learn more about Next.js, take a look at the following resources:
+1. **Clone the repository**
+   ```bash
+   git clone <repository-url>
+   cd next-js-website
+   ```
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+2. **Install dependencies**
+   ```bash
+   npm install
+   ```
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+3. **Set up environment variables**
+   ```bash
+   cp .env.local.example .env.local
+   ```
+   
+   Edit `.env.local` with your Gmail credentials:
+   ```
+   GMAIL_USER=your-email@gmail.com
+   GMAIL_APP_PASSWORD=your-app-password
+   ```
 
-## Deploy on Vercel
+   **Note**: Use an App Password, not your regular Gmail password. Enable 2FA first.
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+4. **Run the development server**
+   ```bash
+   npm run dev
+   ```
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+5. **Open [http://localhost:3000](http://localhost:3000)** in your browser
+
+## 📧 Email Setup
+
+The contact form uses Gmail SMTP for sending emails. To set this up:
+
+1. **Enable 2-Factor Authentication** on your Gmail account
+2. **Generate an App Password**:
+   - Go to Google Account settings
+   - Security → 2-Step Verification → App passwords
+   - Generate a password for "Mail"
+3. **Update .env.local** with your credentials
+
+## 🚀 Build and Deploy
+
+```bash
+# Build for production
+npm run build
+
+# Start production server
+npm run start
+
+# Run linting
+npm run lint
+```
+
+## 🎨 Customization
+
+### Adding New Projects
+
+Edit `src/data/projects.ts`:
+
+```typescript
+{
+  id: 'new-project',
+  title: 'Project Name',
+  date: 'Month Year',
+  image: '/project_images/project.png',
+  video: 'youtube-video-id',
+  description: 'Project description...',
+  tech: ['React', 'Node.js'],
+  codeLink: 'https://github.com/...',
+  demoLink: 'https://demo.example.com',
+  category: 'Web Development'
+}
+```
+
+### Adding Team Members
+
+Edit `src/data/team.ts`:
+
+```typescript
+{
+  id: 'member-id',
+  name: 'Member Name',
+  title: 'Position',
+  image: '/team_images/member.jpg',
+  description: 'Member description...',
+  githubLink: 'https://github.com/username',
+  linkedinLink: 'https://linkedin.com/in/username'
+}
+```
+
+### Styling
+
+- **Colors**: Primary color is `#3b4476`, secondary is `#c9cff6`
+- **Fonts**: Geist Sans and Geist Mono (automatically loaded)
+- **Customization**: Edit `src/app/globals.css` for global styles
+
+## 🧩 Components
+
+Each component is self-contained and can be easily customized:
+
+- **Navigation**: Sticky header with smooth scroll navigation
+- **Hero**: Animated gradient background with CTA buttons
+- **About**: Mission statement with animated statistics
+- **Services**: Grid of services with hover effects
+- **TechStack**: Categorized technology showcase
+- **Projects**: Portfolio with video modals and project details
+- **Team**: Team member profiles with social links
+- **Contact**: Form with Gmail SMTP integration
+- **Footer**: Company info and navigation links
+
+## 🔧 Tech Stack
+
+- **Frontend**: Next.js 15.5, React 19, TypeScript
+- **Styling**: Tailwind CSS v4, CSS Variables
+- **Build**: Turbopack (Next.js built-in)
+- **Email**: Nodemailer with Gmail SMTP
+- **Deployment**: Vercel (recommended)
+
+## 📄 License
+
+This project is private and proprietary to Aetherion.
