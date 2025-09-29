@@ -96,7 +96,7 @@ export async function POST(request: NextRequest) {
                 <li>Our team will review your project details within <strong>24 hours</strong></li>
                 <li>We'll prepare a personalized proposal tailored to your needs</li>
                 <li>Schedule a discovery call to discuss your vision in detail</li>
-                <li>Provide you with a detailed timeline and cost estimate</li>
+                <li>Provide you with a detailed timeline and subscription cost</li>
               </ul>
             </div>
             
