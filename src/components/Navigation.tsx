@@ -1,6 +1,7 @@
 'use client';
 
 import { useState, useEffect } from 'react';
+import Image from 'next/image';
 
 export default function Navigation() {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -33,7 +34,24 @@ export default function Navigation() {
         <div className="flex justify-between items-center py-4">
           {/* Logo */}
           <div className="flex-shrink-0">
-            <h2 className="text-2xl font-bold text-[#3b4476]">Aetherion</h2>
+            <button
+              onClick={() => scrollToSection('home')}
+              className="flex items-center space-x-2 sm:space-x-3 hover:opacity-80 transition-opacity duration-300 focus:outline-none focus:ring-2 focus:ring-[#3b4476] focus:ring-opacity-50 rounded-lg p-1"
+              aria-label="Go to top of page"
+            >
+              <div className="relative">
+                <Image
+                  src="/logo.png"
+                  alt="Aetherion Logo"
+                  width={40}
+                  height={40}
+                  className="w-8 h-8 sm:w-10 sm:h-10 object-contain logo-transparent"
+                  priority
+                  unoptimized={false}
+                />
+              </div>
+              <h2 className="text-xl sm:text-2xl font-bold text-[#3b4476]">Aetherion</h2>
+            </button>
           </div>
 
           {/* Desktop Navigation */}

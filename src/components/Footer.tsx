@@ -1,5 +1,7 @@
 "use client";
 
+import Image from 'next/image';
+
 export default function Footer() {
   const scrollToSection = (sectionId: string) => {
     const element = document.getElementById(sectionId);
@@ -14,7 +16,21 @@ export default function Footer() {
         <div className="grid md:grid-cols-4 gap-8">
           {/* Company Info */}
           <div className="md:col-span-2">
-            <h3 className="text-2xl font-bold mb-4">Aetherion</h3>
+            <div className="flex items-center space-x-3 mb-4">
+              <Image
+                src="/logo.png"
+                alt="Aetherion Logo"
+                width={32}
+                height={32}
+                className="w-7 h-7 sm:w-8 sm:h-8 object-contain logo-transparent footer-logo-white"
+                style={{ 
+                  filter: 'invert(1) brightness(0) saturate(100%) invert(100%)',
+                  backgroundColor: 'transparent'
+                }}
+                unoptimized={false}
+              />
+              <h3 className="text-2xl font-bold">Aetherion</h3>
+            </div>
             <p className="text-gray-300 mb-6 leading-relaxed">
               Transforming ideas into powerful digital solutions through
               innovative technology and expert craftsmanship.
