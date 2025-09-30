@@ -43,7 +43,6 @@ export async function POST(request: NextRequest) {
       html: `
         <div style="font-family: Arial, sans-serif; max-width: 600px; margin: 0 auto;">
           <div style="text-align: center; margin-bottom: 20px; padding: 20px; background: linear-gradient(135deg, #3b4476, #c9cff6); border-radius: 10px;">
-            <img src="${process.env.NEXT_PUBLIC_BASE_URL || 'http://localhost:3001'}/logo.png" alt="Aetherion Logo" style="height: 40px; width: auto; filter: invert(1) brightness(2); background: transparent; margin-bottom: 10px;" onerror="this.style.display='none'" />
             <h1 style="color: white; margin: 0; font-size: 1.8em;">Aetherion</h1>
           </div>
           <h2 style="color: #3b4476; border-bottom: 2px solid #c9cff6; padding-bottom: 10px;">
@@ -81,9 +80,6 @@ export async function POST(request: NextRequest) {
         <div style="font-family: Arial, sans-serif; max-width: 600px; margin: 0 auto; background-color: #f8f9fa;">
           <!-- Header -->
           <div style="background: linear-gradient(135deg, #3b4476, #c9cff6); padding: 40px 30px; text-align: center;">
-            <div style="margin-bottom: 20px;">
-              <img src="${process.env.NEXT_PUBLIC_BASE_URL || 'http://localhost:3001'}/logo.png" alt="Aetherion Logo" style="height: 40px; width: auto; filter: invert(1) brightness(2); background: transparent;" onerror="this.style.display='none'" />
-            </div>
             <h1 style="color: white; margin: 0; font-size: 2.5em; font-weight: bold;">Aetherion</h1>
             <p style="color: #c9cff6; margin: 10px 0 0 0; font-size: 1.1em;">Premium Software Solutions</p>
           </div>
@@ -140,9 +136,6 @@ export async function POST(request: NextRequest) {
           <!-- Footer -->
           <div style="background-color: #2c3e50; color: #ecf0f1; padding: 30px; text-align: center;">
             <div style="margin-bottom: 20px;">
-              <div style="margin-bottom: 15px;">
-                <img src="${process.env.NEXT_PUBLIC_BASE_URL || 'http://localhost:3001'}/logo.png" alt="Aetherion Logo" style="height: 30px; width: auto; filter: invert(1) brightness(2); background: transparent;" onerror="this.style.display='none'" />
-              </div>
               <h3 style="margin: 0 0 10px 0;">Get in Touch</h3>
               <p style="margin: 5px 0; opacity: 0.8;">📍 Davao City</p>
               <p style="margin: 5px 0; opacity: 0.8;">📞 +63-966-233-7369</p>
